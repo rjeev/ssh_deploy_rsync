@@ -23,6 +23,17 @@ The keys should be generated using the PEM format. You can use this command
 ssh-keygen -m PEM -t rsa -b 4096
 ```
 
+Install the generated public key to cloudways dashboard in 
+> https://platform.cloudways.com/server/serverId/access_detail
+> in SSH PUBLIC KEYS
+
+![](https://i.imgur.com/wA3ohYw.png)
+
+> Then add your private key to GITHUB
+>  settings/secrets/actions and name it SSH_KEY
+![](https://i.imgur.com/v26RerX.png)
+
+
 ##### 2. `REMOTE_HOST` [required]
 
 eg: mydomain.com
