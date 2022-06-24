@@ -1,0 +1,42 @@
+name: "cloudways ssh deploy"
+description: "NodeJS action for FAST deployment with rsync/ssh"
+author: "cloudways"
+inputs:
+  SSH_PRIVATE_KEY: # Private Key
+    description: "Private Key"
+    required: true
+  REMOTE_HOST:
+    description: "Remote host"
+    required: true
+  REMOTE_USER:
+    description: "Remote user"
+    required: true
+  REMOTE_PORT:
+    description: "Remote port"
+    required: false
+    default: "22"
+  SOURCE:
+    description: "Source directory"
+    required: false
+    default: ""
+  TARGET:
+    description: "Target directory"
+    required: false
+    default: "/home/REMOTE_USER/"
+  ARGS:
+    description: "Arguments to pass to rsync"
+    required: false
+    default: "-rltgoDzvO"
+  EXCLUDE: 
+    description: "An array of folder to exclude"
+    required: false
+    default: ""
+outputs:
+  status:
+    description: "Status"
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  color: "green"
+  icon: "truck"
